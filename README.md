@@ -27,6 +27,7 @@ variables/keys:
 - Functions to add, edit and delete text.
 - Each text will be coded for precise ordering using ID.
 
+
 variables/keys:
 - generate id? or manually add images/sounds/animations with known id.
 - add: add will add text to current file whereever you want. 
