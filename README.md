@@ -42,4 +42,14 @@ variables/keys:
 - this includes sounds too.
 
 
-Need a system to modify changes easily even when i haven't use for a long time. Similar to a story engine (expansion/advance)
+Need a system to modify changes easily even when i haven't use for a long time. Similar to a story engine (expansion/advance).
+
+
+
+
+
+## Tasks:
+-[] story line - Mandy
+-[] Structure/diagrams
+-[] game design/layout/visual
+-[] studying extra useful knowledge: parent/child, major libraries, classes...
