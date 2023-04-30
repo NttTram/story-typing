@@ -53,3 +53,15 @@ Need a system to modify changes easily even when i haven't use for a long time. 
 -[] Structure/diagrams
 -[] game design/layout/visual
 -[] studying extra useful knowledge: parent/child, major libraries, classes...
+
+
+---
+
+steps to start typing sections:
+1. use temp text (internal variables)
+2. display text on screen
+3. keyboard input
+4. check conditions: if pressed correct, next letter.
+5. screen textbox
+6. relocation text based on textbox size
+...
