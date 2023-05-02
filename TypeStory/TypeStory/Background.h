@@ -5,10 +5,6 @@
 
 class Background {
 public:
-	Background(std::string path, sf::RenderWindow& window);
-	void update(sf::RenderWindow&);
-
-private: 
 	sf::Texture texture;
 	sf::Sprite background;
 
@@ -17,4 +13,7 @@ private:
 
 	float scaleX;
 	float scaleY;
+	Background(std::string, sf::RenderWindow&);
+	void update(sf::RenderWindow&);
+	
 };

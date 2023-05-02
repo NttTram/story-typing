@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "TypeStory/Background.h"
 
 
 int main()
@@ -22,11 +23,9 @@ int main()
 	{
 		std::cout << "font not loaded"<<std::endl; //Cant find the font file; Check the address
 	}
-
-	sf::Texture texture;
-	if (!texture.loadFromFile("../images/bg.jpg")) {
-		std::cout << "background image not found" << std::endl; //Cant find background imgae
-	}
+	
+	std::string bg_path = "../images/bg.jpg";
+	Background bg(bg_path, window);
 
 
 	while (window.isOpen()) {
@@ -39,6 +38,7 @@ int main()
 		window.clear();
 		window.setActive(); //Activate the window for OpenGL rendering
 
+		bg.update(window);
 		window.display();
 	}
 
