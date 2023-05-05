@@ -150,11 +150,13 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="ReadJSON.cpp" />
     <ClCompile Include="Story.cpp" />
+    <ClCompile Include="Textbox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="ReadJSON.h" />
     <ClInclude Include="Story.h" />
+    <ClInclude Include="Textbox.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

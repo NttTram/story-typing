@@ -11,7 +11,6 @@ public:
 	std::string title;
 	std::string author;
 	std::string description;
-	std::vector <std::string> chapters;
 	int chapter_numbers = 0;
 	
 

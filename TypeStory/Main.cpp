@@ -4,6 +4,7 @@
 #include "TypeStory/Background.h"
 #include "TypeStory/ReadJSON.h"
 #include "TypeStory/Story.h"
+#include "TypeStory/Textbox.h"
 
 int main()
 {
@@ -38,18 +39,25 @@ int main()
 
 	story_1.editChapter(2, "image", "grean background");
 	std::cout << "chapter 2: " << story_1.getText(2) << std::endl;
+
+	// Textbox section
+	Textbox textbox(font, 50, 500);
+
 	while (window.isOpen()) {
 
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-
+		
 		window.clear();
 		window.setActive(); //Activate the window for OpenGL rendering
 
 		bg.update(window);
+		textbox.update(window, event);
+		textbox.draw(window);
 		window.display();
+		window.setKeyRepeatEnabled(false);
 	}
 
 	return 0;
