@@ -5,5 +5,5 @@
 
 class Story {
 public:
-
+	
 };
