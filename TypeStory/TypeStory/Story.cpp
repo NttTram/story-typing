@@ -34,9 +34,13 @@ void Story::newChapter() {
 }
 
 void Story::editChapter(int chap_num, std::string key, std::string add_text) {
-	std::string filename = "./stories/Cat-Adventure/chapter" + std::to_string(chap_num) + ".json";
+	std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chap_num) + ".json";
 	Json::Value json_value;
+	std::ifstream open_file(filename);
+	open_file >> json_value;
+	
 	json_value[key] = add_text;
+
 	//open .json file for writing and error checking
 	std::ofstream file(filename);
 	if (!file.is_open()) {

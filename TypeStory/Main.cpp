@@ -34,6 +34,9 @@ int main()
 	//Story.h init
 	Story story_1(json_file.completeJsonData);
 	story_1.newChapter();
+	story_1.newChapter();
+
+	story_1.editChapter(2, "text", "hello");
 
 	while (window.isOpen()) {
 
