@@ -36,8 +36,8 @@ int main()
 	story_1.newChapter();
 	story_1.newChapter();
 
-	story_1.editChapter(2, "text", "hello");
-
+	story_1.editChapter(2, "image", "grean background");
+	std::cout << "chapter 2: " << story_1.getText(2) << std::endl;
 	while (window.isOpen()) {
 
 		while (window.pollEvent(event)) {

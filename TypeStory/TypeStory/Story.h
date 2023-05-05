@@ -13,7 +13,7 @@ public:
 	std::string description;
 	std::vector <std::string> chapters;
 	int chapter_numbers = 0;
-	Json::Value json_value;
+	
 
 	//Methods
 	Story(Json::Value);
@@ -21,6 +21,7 @@ public:
 
 	void newChapter();
 	void editChapter(int, std::string, std::string);
+	std::string getText(int);
 
 
 };
