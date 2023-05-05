@@ -3,6 +3,7 @@
 #include <string>
 #include "TypeStory/Background.h"
 #include "TypeStory/ReadJSON.h"
+#include "TypeStory/Story.h"
 
 int main()
 {
@@ -27,7 +28,12 @@ int main()
 	std::string bg_path = "../images/bg.jpg";
 	Background bg(bg_path, window);
 
-	ReadJSON("../stories/Cat-Adventure/info.json");
+	//Json reader
+	ReadJSON json_file("../stories/Cat-Adventure/info.json");
+
+	//Story.h init
+	Story story_1(json_file.completeJsonData);
+	story_1.newChapter();
 
 	while (window.isOpen()) {
 

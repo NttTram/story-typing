@@ -19,5 +19,6 @@ ReadJSON::ReadJSON(std::string path)
 //
 Json::Value ReadJSON::getInfo(std::string key)
 {
+
 	return completeJsonData[key];
 }

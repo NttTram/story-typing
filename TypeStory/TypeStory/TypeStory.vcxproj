@@ -149,6 +149,7 @@
     <ClCompile Include="..\scr\jsoncpp-master\dist\jsoncpp.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="ReadJSON.cpp" />
+    <ClCompile Include="Story.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
