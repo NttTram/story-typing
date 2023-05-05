@@ -27,7 +27,7 @@ int main()
 	std::string bg_path = "../images/bg.jpg";
 	Background bg(bg_path, window);
 
-	ReadJSON("../story/Cat-Adventure/info.json");
+	ReadJSON("../stories/Cat-Adventure/info.json");
 
 	while (window.isOpen()) {
 
