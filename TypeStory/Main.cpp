@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "TypeStory/Background.h"
-
+#include "TypeStory/ReadJSON.h"
 
 int main()
 {
@@ -27,6 +27,7 @@ int main()
 	std::string bg_path = "../images/bg.jpg";
 	Background bg(bg_path, window);
 
+	ReadJSON("../story/Cat-Adventure/info.json");
 
 	while (window.isOpen()) {
 

@@ -88,12 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Hamal\Documents\SFML-2.5.1\include;C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master\include;C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master"C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master\include;C:\Users\Hamal\Documents\SFML-2.5.1\include;C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Hamal\Documents\SFML-2.5.1\lib;C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master\src\lib_json;C:\Users\Hamal\Documents\SFML-2.5.1\lib;C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-main-d.lib;opengl32.lib;freetype.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -105,14 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Hamal\Documents\SFML-2.5.1\include;C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master\include;C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Hamal\Documents\SFML-2.5.1\lib;C:\Users\Hamal\Desktop\story-typing\TypeStory\scr\jsoncpp-master\src\lib_json;C:\Users\anime\source\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-main-d.lib;opengl32.lib;freetype.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -146,10 +146,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp" />
+    <ClCompile Include="..\scr\jsoncpp-master\dist\jsoncpp.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="ReadJSON.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="ReadJSON.h" />
+    <ClInclude Include="Story.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
