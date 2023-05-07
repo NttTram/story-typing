@@ -45,16 +45,22 @@ int main()
 
 	while (window.isOpen()) {
 
+		//pollEvent is when it detect new event. 
+		//This helps with textentered else 
+		//it will loop the same key = printing multiple "a" when only pressed "a" once
+		
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed)
 				window.close();
+			
+			textbox.update(window, event);
 		}
 		
 		window.clear();
 		window.setActive(); //Activate the window for OpenGL rendering
 
 		bg.update(window);
-		textbox.update(window, event);
+		
 		textbox.draw(window);
 		window.display();
 		window.setKeyRepeatEnabled(false);

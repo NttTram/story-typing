@@ -12,12 +12,13 @@ Story::~Story()
 }
 
 void Story::newChapter() {
-	
+	chapter_numbers++;
+
 	Json::Value json_value;
 	json_value["text"] = "";
 	json_value["image"] = "";
 	json_value["sound"] = "";
- 	std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chapter_numbers+1) + ".json";
+ 	std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chapter_numbers) + ".json";
 	
 	//create and open .json file to writing
 	std::ofstream file(filename);
@@ -30,12 +31,12 @@ void Story::newChapter() {
 	else {
 		std::cerr << "Failed to create file." << std::endl;
 	}
-	chapter_numbers++;
+	
 
 }
 
 void Story::editChapter(int chap_num, std::string key, std::string add_text) {
-	std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chap_num-1) + ".json";
+	std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chap_num) + ".json";
 	Json::Value json_value;
 
 	//read .json file and put it into json_value;
@@ -61,7 +62,7 @@ void Story::editChapter(int chap_num, std::string key, std::string add_text) {
 }
 
 std::string Story::getText(int chap_num) {
-	 std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chap_num-1) + ".json";
+	 std::string filename = "../stories/Cat-Adventure/chapter" + std::to_string(chap_num) + ".json";
 	 Json::Value json_value;
 
 	 //open .json file for read

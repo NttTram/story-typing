@@ -39,11 +39,11 @@ bool Textbox::update(sf::RenderWindow& window, sf::Event& event) {
 	} //end if
 
 	//Typewriter effect
-	if (timer.getElapsedTime().asSeconds() > 0.05 && character < input.getSize()) {
+	/*if (timer.getElapsedTime().asSeconds() > 0.005 && character < input.getSize()) {
 		timer.restart();
 		character++;
 		text.setString(input.substring(0, character));
-	}
+	}*/
 
 	std::array<bool, sf::Keyboard::KeyCount> keyState;
 	keyState.fill(true);
@@ -58,9 +58,10 @@ bool Textbox::update(sf::RenderWindow& window, sf::Event& event) {
 				input = input.substring(0, input.getSize() - 1);
 				text.setString(input); //remove the last letter
 			}
-			else if (text.getGlobalBounds().width < 800) {
-				input += event.text.unicode;
-				//text.setString(input);
+			else if (text.getGlobalBounds().width < 1140) {
+				input += (char)event.text.unicode;
+				std::cout << event.text.unicode << std::endl;
+				text.setString(input);
 			}
 			
 			
