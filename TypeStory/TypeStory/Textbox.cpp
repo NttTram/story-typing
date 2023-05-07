@@ -6,10 +6,13 @@ Textbox::Textbox(sf::Font& font, float posX, float posY) : selected(false) {
 
 	text.setFont(font);
 	text.setCharacterSize(35);
-	text.setPosition(posX + 10, posY + 1);
+	text.setPosition(posX + 10, posY + 10);
 	textbox.setFillColor(sf::Color(255, 255, 255, 50));
 	text.setFillColor(sf::Color(50, 50, 50));
 	character = 0;
+	this->posX = posX + 10;
+	this->posY = posY + 10;
+	
 
 }
 
@@ -58,10 +61,17 @@ bool Textbox::update(sf::RenderWindow& window, sf::Event& event) {
 				input = input.substring(0, input.getSize() - 1);
 				text.setString(input); //remove the last letter
 			}
-			else if (text.getGlobalBounds().width < 1140) {
+			else if (text.findCharacterPos(-1).x < 1200) { //when the position of the last character is less than 1200
 				input += (char)event.text.unicode;
-				std::cout << event.text.unicode << std::endl;
 				text.setString(input);
+				
+			}
+			else if (text.findCharacterPos(-1).x > 1200) {
+				//create newline when out of bound based on the last character's position. 
+				input += "\n";
+				input += (char)event.text.unicode;
+				text.setString(input);
+				
 			}
 			
 			

@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <sstream>
 #include <json/json.h>
+#include <ostream>
 
 class Textbox {
 
@@ -15,6 +16,8 @@ public:
 
 	float getWidth() const;
 
+	bool bound_check = false;
+	float posX, posY;
 	void setPosition(float, float);
 	bool selected;
 	sf::RectangleShape textbox;

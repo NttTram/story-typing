@@ -13,6 +13,7 @@ public:
 	std::string description;
 	int chapter_numbers = 0;
 	
+	
 
 	//Methods
 	Story(Json::Value);
