@@ -7,6 +7,7 @@
 #include <json/json.h>
 #include <ostream>
 
+
 class Textbox {
 
 public:
@@ -27,8 +28,18 @@ public:
 	unsigned int character;
 	sf::Text display_text;
 
+	sf::Text loadStory(std::string, sf::RenderWindow&);
+	//bool endOfChapter(std::string);
+
 private: 
 	sf::String input;
 	sf::Text text;
-
+	
+	
+	sf::Text display_story;
+	bool checkInput(sf::Event&);
+	
+	void textWarp(sf::Event&);
+	void typeWriter(std::string);
+	void clickTextbox(sf::RenderWindow&);
 };

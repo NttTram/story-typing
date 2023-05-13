@@ -36,12 +36,14 @@ int main()
 	Story story_1(json_file.completeJsonData);
 	story_1.newChapter();
 	story_1.newChapter();
-
-	story_1.editChapter(2, "image", "grean background");
+	story_1.editChapter(1, "text", title);
+	story_1.editChapter(2, "text", description);
 	std::cout << "chapter 2: " << story_1.getText(2) << std::endl;
 
 	// Textbox section
 	Textbox textbox(font, 50, 500);
+
+	int i = 1;
 
 	while (window.isOpen()) {
 
@@ -54,16 +56,32 @@ int main()
 				window.close();
 			
 			textbox.update(window, event);
+
+			if (event.type == sf::Event::KeyPressed) {
+
+				if (event.key.code == sf::Keyboard::Enter && i < story_1.chapter_numbers) {
+					i++;
+				}
+
+			}
+
+			
 		}
 		
+
 		window.clear();
 		window.setActive(); //Activate the window for OpenGL rendering
-
 		bg.update(window);
+		//any text should be below this
+		//textbox.draw(window);
+
 		
-		textbox.draw(window);
+		
+		sf::Text loaded_story = textbox.loadStory(story_1.getText(i), window);
+		std::string temp_str = loaded_story.getString();
+		std::cout << "temp_str: " << temp_str << std::endl;
 		window.display();
-		window.setKeyRepeatEnabled(false);
+		
 	}
 
 	return 0;
