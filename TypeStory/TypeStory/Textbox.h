@@ -35,11 +35,11 @@ private:
 	sf::String input;
 	sf::Text text;
 	
-	
+	sf::String story_input;
 	sf::Text display_story;
 	bool checkInput(sf::Event&);
 	
-	void textWarp(sf::Event&);
+	void textWarp(sf::Event&, sf::Text&, sf::String&);
 	void typeWriter(std::string);
 	void clickTextbox(sf::RenderWindow&);
 };

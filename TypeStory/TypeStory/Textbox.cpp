@@ -16,7 +16,7 @@ Textbox::Textbox(sf::Font& font, float posX, float posY) : selected(false) {
 	display_story.setFont(font);
 	display_story.setCharacterSize(35);
 	display_story.setPosition(posX + 10, posY + 10);
-	display_story.setFillColor(sf::Color::Red);
+	display_story.setFillColor(sf::Color(255,0,0,50));
 
 }
 
@@ -33,11 +33,12 @@ bool Textbox::update(sf::RenderWindow& window, sf::Event& event) {
 	
 	//Check to see if user click on textbox if so change the textbox colour
 	clickTextbox(window);
-	
+	textWarp(event, display_story, story_input);
 
 	if (selected) {
 		//warp text within textbox
-		textWarp(event);	
+		textWarp(event, text, input);	
+		
 
 		return 1;
 	}
@@ -53,32 +54,32 @@ bool Textbox::update(sf::RenderWindow& window, sf::Event& event) {
 //}
 
 
-void Textbox::textWarp(sf::Event& event) {
+void Textbox::textWarp(sf::Event& event, sf::Text& txt, sf::String& txt_input) {
 
 	if (event.type == sf::Event::TextEntered) {
 
 		//ignore nothing and tab 
 		if (event.text.unicode == '\0' || event.text.unicode == '\t') {} //tab and enter does nothing;
 		else if (event.text.unicode == 8) { //backspace
-			input = input.substring(0, input.getSize() - 1);
-			text.setString(input); //remove the last letter
+			txt_input = txt_input.substring(0, txt_input.getSize() - 1);
+			txt.setString(txt_input); //remove the last letter
 		}
 
-		else if (text.findCharacterPos(-1).x < 1200) { //when the position of the last character is less than 1200
-			input += (char)event.text.unicode;
-			text.setString(input);
+		else if (txt.findCharacterPos(-1).x < 1200) { //when the position of the last character is less than 1200
+			txt_input += (char)event.text.unicode;
+			txt.setString(txt_input);
 
 		}
-		else if (text.findCharacterPos(-1).x >= 1200) {
+		else if (txt.findCharacterPos(-1).x >= 1200) {
 			//create newline when out of bound based on the last character's position. 
-			input += "\n";
-			input += (char)event.text.unicode;
-			text.setString(input);
-			if (text.findCharacterPos(-1).y > 645) { // when text vertically out of textbox
-				input = "";
+			txt_input += "\n";
+			txt_input += (char)event.text.unicode;
+			txt.setString(txt_input);
+			if (txt.findCharacterPos(-1).y > 645) { // when text vertically out of textbox
+				txt_input = "";
 				std::cout << "Here" << std::endl;
-				input += (char)event.text.unicode;
-				text.setString(input);
+				txt_input += (char)event.text.unicode;
+				txt.setString(txt_input);
 			}
 			
 

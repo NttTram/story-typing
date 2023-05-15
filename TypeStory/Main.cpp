@@ -15,7 +15,7 @@ int main()
 	// Brief/temp info
 	std::string title = "Twins";
 	std::string author = "Mandy Thai";
-	std::string description = "About a set of twins in a family of assassin got separated.";
+	std::string description = "Lily. She lived with her parents in a cozy little house on the edge of the village. Lily was known for her love of adventure and exploration, often wandering deep into the forest to discover new things. One day, while exploring, Lily came across an oldand rusted key lying on the ground.Intrigued, she picked it upand decided to find out what it unlocked.After searching for hours, she finally found an old chest hidden deep in the forest.She used the key to unlock itand inside, she found a map.";
 
 	sf::Event event;
 
@@ -43,7 +43,14 @@ int main()
 	// Textbox section
 	Textbox textbox(font, 50, 500);
 
+	//to change chapter by pressing enters
 	int i = 1;
+
+	//Sprites section
+	sf::Texture sprite_texture;
+	sprite_texture.loadFromFile("../images/Walk.png");
+	sf::Sprite sprite(sprite_texture);
+
 
 	while (window.isOpen()) {
 
@@ -75,11 +82,13 @@ int main()
 		//any text should be below this
 		//textbox.draw(window);
 
+		//
+		//
+		//sf::Text loaded_story = textbox.loadStory(story_1.getText(i), window);
+		//std::string temp_str = loaded_story.getString();
 		
-		
-		sf::Text loaded_story = textbox.loadStory(story_1.getText(i), window);
-		std::string temp_str = loaded_story.getString();
-		std::cout << "temp_str: " << temp_str << std::endl;
+		window.draw(sprite);
+
 		window.display();
 		
 	}

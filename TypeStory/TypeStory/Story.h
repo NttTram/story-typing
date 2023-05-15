@@ -16,11 +16,16 @@ public:
 	
 
 	//Methods
+	//Create a new story -> info.json -> title, author. description
 	Story(Json::Value);
 	~Story();
 
+	//Add new chapter
 	void newChapter();
+	//edit chapter based on key: "text", "image", "sound"
 	void editChapter(int, std::string, std::string);
+
+	//Get text for certain chapter number (int)
 	std::string getText(int);
 
 
