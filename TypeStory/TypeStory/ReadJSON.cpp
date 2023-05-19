@@ -3,6 +3,7 @@
 
 ReadJSON::ReadJSON(std::string path)
 {
+	//path includes the 
 	std::ifstream file(path);
 
 	if (!reader.parse(file, completeJsonData)) {
@@ -19,6 +20,5 @@ ReadJSON::ReadJSON(std::string path)
 //
 Json::Value ReadJSON::getInfo(std::string key)
 {
-
 	return completeJsonData[key];
 }
